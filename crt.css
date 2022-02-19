@@ -1,0 +1,63 @@
+/*  
+    Simple CSS CRT filter by 𝕂𝕣𝕪𝕡𝕥𝕠𝕟𝕒𝕦𝕥 (et al). My eclectic site -> https://kry.pt 
+    Inspired by this filter by Alec Lownes: http://aleclownes.com/2017/02/01/crt-display.html . 
+    Hopefully less RAM-hogging for those (like me) who hear their laptop fans spin up every 
+    time they open their sites on Chrome or Edge.
+
+    Made with love for the Neocities community <3
+    Version 1 - FEB 2022
+*/
+
+/*  
+    The "flickering" effect. If you feel it's too seizure-inducing, 
+    simply comment it out. Alec's version was a bit too overly complicated IMHO.
+*/
+#crt {
+    animation: flicker 0.1s infinite;
+}
+@keyframes flicker {
+    0%      {opacity: 0.50;}
+    25%     {opacity: 0.49;}
+    50%     {opacity: 0.48;}
+    75%     {opacity: 0.49;}
+    100%    {opacity: 0.50;}    /* <- Remove this line if you want to have a seizure. */
+}
+
+/*
+    Instead of pure CSS like Alec's, I used a 120x120 PNG
+    of a collection of pixels for the "screen door" effect.
+    Results in happy RAM but requires, yaknow, the image.
+    This sometimes results in the filter loading slowly.
+*/
+#crt {
+    background-image: url('pixel.png');
+    background-size: 4px 4px;
+    mix-blend-mode: multiply; 
+}
+
+/*
+    Stretches DIV to edges of screen.
+*/
+#crt   {
+    position: fixed; 
+    width: 100%; 
+    top: 0; 
+    bottom: 0; 
+    right: 0; 
+    left: 0;
+    z-index: 9999;
+}
+
+/*
+    Decided to leave this in as a usable class, 
+    since it is useful to span a DIV to the edges 
+    of your screen.
+*/
+.span   {
+    position: fixed; 
+    width: 100%; 
+    top: 0; 
+    bottom: 0; 
+    right: 0; 
+    left: 0;
+}
