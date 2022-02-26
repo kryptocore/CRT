@@ -26,7 +26,7 @@
 /*
     Instead of pure CSS like Alec's, I used a small PNG of a collection of pixels 
     for the "screen door" effect. Results in happy RAM but requires, yaknow, the image.
-    This sometimes results in the filter loading slowly but is nice for pixel font scaling.
+    This sometimes results in the filter loading slowly but is nice for pixel perfect scaling.
 */
 #crt {
     background-image: url('pixel.png');
