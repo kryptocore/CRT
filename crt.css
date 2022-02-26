@@ -5,7 +5,7 @@
     time they open their sites on Chrome or Edge.
 
     Made with love for the Neocities community <3
-    Version 1.1 - FEB 2022
+    Version 1.2 - FEB 2022
 */
 
 /*  
@@ -34,6 +34,7 @@
     background-color: white;
     background-blend-mode: hard-light;  /* <- Helps combat the 'darkening' effect from multiply.  */
     mix-blend-mode: multiply;
+    pointer-events: none;
 }
 
 /*
