@@ -9,3 +9,5 @@ Inspired by this [pure CSS CRT filter](http://aleclownes.com/2017/02/01/crt-disp
 Just drop the PNG image ("pixel.png", required) and CSS file into the main directory of your site and make a DIV on your site like this: 
 
 ```<div id="crt"></div>``` .
+
+__DOES NOT WORK IN INTERNET EXPLORER!__ IE doesn't play nice with opacity percentages.
