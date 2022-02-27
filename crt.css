@@ -5,31 +5,17 @@
     time they open their sites on Chrome or Edge.
 
     Made with love for the Neocities community <3
-    Version 1.2 - FEB 2022
+    Version 1.1 - FEB 2022
 */
-
-/*  
-    The "flickering" effect. If you feel it's too seizure-inducing, 
-    simply comment it out. Alec's version was a bit too overly complicated IMHO.
-*/
-#crt {
-    animation: flicker 0.1s infinite;
-}
-@keyframes flicker {
-    0%      {opacity: 0.7;}
-    25%     {opacity: 0.8;}
-    50%     {opacity: 0.9;}
-    75%     {opacity: 0.8;}
-    100%    {opacity: 0.5;}
-}
 
 /*
-    Instead of pure CSS like Alec's, I used a small PNG of a collection of pixels 
+    Instead of pure CSS like Alec's, I used a small APNG of a collection of pixels 
     for the "screen door" effect. Results in happy RAM but requires, yaknow, the image.
     This sometimes results in the filter loading slowly but is nice for pixel perfect scaling.
+    If your browser doesn't support APNG, it will use the first frame as a fallback!
 */
 #crt {
-    background-image: url('pixel.png');
+    background-image: url('pixel.apng');
     background-size: 2px 1px;
     background-color: white;
     background-blend-mode: hard-light;  /* <- Helps combat the 'darkening' effect from multiply.  */
@@ -55,7 +41,7 @@
     since it is useful to span a DIV to the edges 
     of your screen.
 */
-.span   {
+.screen   {
     position: fixed; 
     width: 100%; 
     top: 0; 
