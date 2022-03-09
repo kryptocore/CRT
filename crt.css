@@ -5,7 +5,7 @@
     time they open their sites on Chrome or Edge.
 
     Made with love for the Neocities community <3
-    Version 1.3 - FEB 2022
+    Version 1.4 - MAR 2022
 */
 
 /*
@@ -48,4 +48,10 @@
     bottom: 0; 
     right: 0; 
     left: 0;
+}
+
+/* Temporary Firefox opacity quickfix (less headache-inducing, unfortunately spikes the RAM usage)  */
+
+@-moz-document url-prefix(){
+    #crt    {opacity: 0.1;}
 }
