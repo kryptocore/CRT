@@ -4,8 +4,7 @@
     Hopefully less RAM-hogging for those (like me) who hear their laptop fans spin up every 
     time they open their sites on Chrome or Edge.
 
-    Made with love for the Neocities community <3
-    Version 1.4 - MAR 2022
+    Version 1.5 - APR 2023
 */
 
 /*
@@ -14,44 +13,25 @@
     This sometimes results in the filter loading slowly but is nice for pixel perfect scaling.
     If your browser doesn't support APNG, it will use the first frame as a fallback!
 */
-#crt {
-    background-image: url('pixel.apng');
-    background-size: 2px 1px;
-    background-color: white;
-    background-blend-mode: hard-light;  /* <- Helps combat the 'darkening' effect from multiply.  */
-    mix-blend-mode: multiply;
-    pointer-events: none;
-}
 
-/*
-    Stretches DIV to edges of screen.
-*/
-#crt   {
-    position: fixed; 
-    width: 100%; 
-    top: 0; 
-    bottom: 0; 
-    right: 0; 
-    left: 0;
-    z-index: 9999;
-}
+crt {   background-image: url('APNG/pixel.apng');
+        background-size: 2px 1px;
+        background-color: white;
+        background-blend-mode: hard-light;  /* <- Helps combat the 'darkening' effect from multiply.  */
+        mix-blend-mode: multiply;
+        pointer-events: none;
+        opacity: 0.3;
+        position: absolute; 
+        width: 100%; 
+        inset: 0;
+        z-index: 999999;
+    }
 
-/*
-    Decided to leave this in as a usable class, 
-    since it is useful to span a DIV to the edges 
-    of your screen.
-*/
-.screen   {
-    position: fixed; 
-    width: 100%; 
-    top: 0; 
-    bottom: 0; 
-    right: 0; 
-    left: 0;
-}
+/*  Firefox deals with opacity rendering differently, so I have to drastically lower it. 
+    Eats RAM, defeating the purpose, but Firefox is lame anyways so I don't really care.  */
 
-/* Temporary Firefox opacity quickfix (less headache-inducing, unfortunately spikes the RAM usage)  */
+@-moz-document url-prefix() {
 
-@-moz-document url-prefix(){
-    #crt    {opacity: 0.1;}
+    crt {opacity: 0.1;}
+
 }
